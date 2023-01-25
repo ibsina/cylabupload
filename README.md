@@ -10,6 +10,7 @@ A vulnerable web application due to [unrestricted file upload](https://owasp.org
 
 * the app is a picture gallery
 * uploaded images are not filtered or validated
+* so it can be hacked by **uploading a web shell or other PHP file**...
 
 ## Try in Play with Docker
 
