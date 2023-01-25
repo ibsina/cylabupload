@@ -89,7 +89,7 @@
                         </button>
                     </div>
                 </form>
-                
+
                 <div>
                     <?php foreach (array_diff(scandir(__DIR__ . "/uploads"), [".", ".."]) as $image) { ?>
                     <img src="<?php echo "/uploads/" . $image ?>" class="img mx-1 my-1" height="200px">
@@ -101,8 +101,14 @@
         <footer class="footer">
             <div class="container">
                 <span class="text-muted">
-                    <a href="https://play.cylab.be">Cylab Play</a> | brought to you
-                    by <a href="https://cylab.be">cylab.be</a>
+                    <a href="https://gitlab.cylab.be/cylab/play/upload">Upload</a>
+                    <?php echo file_get_contents(__DIR__ . '/VERSION') ?> |
+                    <a href="https://cylab.be">cylab.be</a>
+                </span>
+
+
+                <span class="pl-3">
+                    Original images <a href="https://unsplash.com/">https://unsplash.com/</a>
                 </span>
             </div>
         </footer>
