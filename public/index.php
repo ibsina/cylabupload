@@ -9,6 +9,9 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
               integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
               crossorigin="anonymous">
+
+        <link href="/css/lightbox.min.css" rel="stylesheet" />
+
         <style>
             body {
                 background-color: #f8fafc;
@@ -92,7 +95,9 @@
 
                 <div>
                     <?php foreach (array_diff(scandir(__DIR__ . "/uploads"), [".", ".."]) as $image) { ?>
-                    <img src="<?php echo "/uploads/" . $image ?>" class="img mx-1 my-1" height="200px">
+                    <a href="<?php echo "/uploads/" . $image ?>" data-lightbox="gallery">
+                        <img src="<?php echo "/uploads/" . $image ?>" class="img mx-1 my-1" height="200px">
+                    </a>
                     <?php } ?>
                 </div>
             </div>
@@ -112,17 +117,7 @@
                 </span>
             </div>
         </footer>
-
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
-                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
-                crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" 
-                integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" 
-                crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" 
-                integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" 
-                crossorigin="anonymous"></script>
+                
+        <script src="/js/lightbox-plus-jquery.min.js"></script>
     </body>
 </html>
